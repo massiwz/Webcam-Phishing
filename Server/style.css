@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically on smaller screens */
+    font-family: "Roboto", sans-serif;
+    background-color: #080808e3;
+}
+
+/* Loading Message */
+#loadingMessage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(211, 0, 0, 0.95);
+    color: white;
+    padding: 1vh;
+    border-radius: 3vw;
+    width: 40vw;
+    height: 25%;
+    text-align: center;
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes move {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Spinner */
+.spinner {
+    width: 2vw;
+    height: 2vw;
+    border: 0.5vw solid #333;
+    border-top: 0.5vw solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+.blur {
+    filter: blur(7px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1150;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: hsl(0, 100%, 30%);
+    margin: 30vh auto 0;
+    padding: 3vw;
+    border-radius: 2vw;
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    font-size: 4vw;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Progress Bar */
+.bar {
+    width: 0%;
+    height: 1vh;
+    background-color: #333;
+    animation: move 2s linear infinite;
+    margin-top: 2vh;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    min-height: 10vh;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.navbar li {
+    margin-top: 1vh;
+    margin-left: 5vw;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar li:nth-child(2) {
+    margin-right: 5vw;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+}
+
+.logo img {
+    width: 20vw;
+    height: auto;
+    max-width: 10vh;
+    background-color: transparent;
+}
+
+.main {
+    width: 100%;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url(https://assets.nflxext.com/ffe/siteui/vlv3/a1dc92ca-091d-4ca9-a05b-8cd44bbfce6a/f9368347-e982-4856-a5a4-396796381f28/RS-en-20191230-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+}
+
+.buttons {
+    background-color: #e50914;
+    padding: 0.2vh 1vh;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.2vh;
+    font-family: inherit;
+    
+}
+
+.area {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+.area h1 {
+    font-size: 6vw;
+    word-spacing: 0.5vw;
+    line-height: 6vw;
+}
+
+.area h3 {
+    margin-top: -6vh;
+    font-size: 2vw;
+}
+
+.area h4 {
+    margin-top: 2vh;
+    font-size: 1;
+}
+
+@media (max-width: 600px) {
+
+    .area h1 {
+        margin-top: 5vh;
+        font-size: 9vw; /* Increased font size for phones */
+        line-height: 9vw; /* Increased line height for phones */
+    }
+
+    .area h3 {
+        font-size: 5vw; /* Increased font size for phones */
+        margin-top: 0vh;
+    }
+
+    .area h4 {
+        margin-top: 3vh; /* Increased margin top for phones */
+    }
+}
+
+.allow {
+    background-color: #ff000d;
+    padding: 1.5rem 3rem; /* Using rem units for padding */
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem; /* Using rem units for border-radius */
+    align-items: center; /* Align items in the center vertically */
+    gap: 1rem; /* Add gap between flex items */
+}
+
+.netflix-search {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column; /* Changed to column layout */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vh;
+    background: transparent;
+}
+
+.netflix-search-input {
+    width: 80vw; /* Adjusted width for better fit on mobile */
+    height: 2vh;
+    padding: 1vh 2vw;
+    font-size: 4vw; /* Adjusted font size for better readability on mobile */
+    border: none;
+    border-radius: 5vh;
+}
+
+.netflix-search-button {
+    background-color: #E50914;
+    margin-top: 2vh; /* Adjusted margin for better spacing on mobile */
+    padding: 2vh 4vw;
+    color: white;
+    border: none;
+    border-radius: 6vw;
+    font-size: 2.8vw; /* Adjusted font size for better proportion on mobile */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (min-width: 600px) {
+    .netflix-search {
+        flex-direction: row; /* Reverting to row layout for larger screens */
+    }
+    
+    .netflix-search-input {
+        width: 25vw;
+        height: 5%;
+        font-size: 1.5vw;
+    }
+
+    .netflix-search-button {
+        margin-left: 0.5vw; /* Adjusted margin for better spacing on larger screens */
+        height: 10%;
+        font-size: 2vh;
+        margin-top: 0; /* Reset margin top for larger screens */
+    }
+}
+
+.netflix-search-button:hover {
+    background-color: #9b535a;
+    font-size: 2.4vh;
+}
+
